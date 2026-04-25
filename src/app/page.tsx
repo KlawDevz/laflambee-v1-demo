@@ -78,26 +78,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="home-conversion" data-reveal>
-        <div className="container">
-          <div className="home-conversion__card">
-            <div className="home-conversion__infos">
-              <p className="home-conversion__title">Réservation conseillée</p>
-              <p className="home-conversion__meta">{site.footerHours}</p>
-              <p className="home-conversion__meta">{site.address}</p>
-            </div>
-            <div className="home-conversion__actions">
-              <a href={`tel:${site.phoneHref}`} className="btn btn--primary home-conversion__btn">
-                Appeler {site.phoneDisplay}
-              </a>
-              <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className="btn btn--outline home-conversion__btn">
-                Itinéraire
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="intro" data-reveal>
         <div className="container">
           <div className="intro__split">
