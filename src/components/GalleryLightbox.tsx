@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Picture } from "@/components/Picture";
 
@@ -11,6 +12,24 @@ type GalleryLightboxProps = {
 
 export function GalleryLightbox({ items }: GalleryLightboxProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const openAt = (index: number) => setActiveIndex(index);
+
+  const close = () => setActiveIndex(null);
+
+  const goNext = () => {
+    setActiveIndex((prev) => {
+      if (prev === null) return 0;
+      return (prev + 1) % items.length;
+    });
+  };
+
+  const goPrev = () => {
+    setActiveIndex((prev) => {
+      if (prev === null) return 0;
+      return (prev - 1 + items.length) % items.length;
+    });
+  };
 
   const activeItem = useMemo(() => {
     if (activeIndex === null) return null;
@@ -55,12 +74,7 @@ export function GalleryLightbox({ items }: GalleryLightboxProps) {
       <div className="galerie__grid" data-reveal-stagger>
         {items.map(([src, alt], index) => (
           <figure className="galerie__item" key={`${src}-${index}`}>
-            <button
-              className="galerie__item-button"
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Agrandir l'image : ${alt}`}
-            >
+            <button className="galerie__item-button" type="button" onClick={() => openAt(index)} aria-label={`Agrandir l'image : ${alt}`}>
               <Picture src={src} alt={alt} width={1200} height={800} sizes="(max-width: 768px) 100vw, 400px" />
             </button>
           </figure>
@@ -68,15 +82,36 @@ export function GalleryLightbox({ items }: GalleryLightboxProps) {
       </div>
 
       {activeItem && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Galerie photos" onClick={() => setActiveIndex(null)}>
-          <button className="lightbox__close" type="button" aria-label="Fermer" onClick={() => setActiveIndex(null)}>
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Galerie photos" onClick={close}>
+          <button className="lightbox__close" type="button" aria-label="Fermer" onClick={close}>
             ×
           </button>
 
+          <button className="lightbox__nav lightbox__nav--prev" type="button" aria-label="Image précédente" onClick={(event) => {
+            event.stopPropagation();
+            goPrev();
+          }}>
+            ‹
+          </button>
+
           <figure className="lightbox__content" onClick={(event) => event.stopPropagation()}>
-            <img src={activeItem[0]} alt={activeItem[1]} loading="eager" decoding="sync" />
+            <Image
+              src={activeItem[0]}
+              alt={activeItem[1]}
+              width={1600}
+              height={1067}
+              sizes="(max-width: 768px) 92vw, 1200px"
+              priority
+            />
             <figcaption className="lightbox__caption">{activeItem[1]}</figcaption>
           </figure>
+
+          <button className="lightbox__nav lightbox__nav--next" type="button" aria-label="Image suivante" onClick={(event) => {
+            event.stopPropagation();
+            goNext();
+          }}>
+            ›
+          </button>
         </div>
       )}
     </>

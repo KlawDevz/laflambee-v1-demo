@@ -2154,6 +2154,7 @@ body.page-equipe .producer-card {
   max-height: 90vh;
   display: grid;
   gap: var(--sp-3);
+  justify-items: center;
 }
 
 .lightbox__content img {
@@ -2162,6 +2163,41 @@ body.page-equipe .producer-card {
   max-height: calc(90vh - 3.5rem);
   object-fit: contain;
   border-radius: var(--r-md);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 1px solid oklch(0.85 0 0 / 0.35);
+  border-radius: 999px;
+  background: oklch(0.22 0.01 40 / 0.82);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox__nav--prev {
+  left: var(--sp-4);
+}
+
+.lightbox__nav--next {
+  right: var(--sp-4);
+}
+
+.lightbox__nav:hover {
+  background: oklch(0.3 0.02 40 / 0.9);
+}
+
+.lightbox__nav:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
 }
 
 .lightbox__caption {
@@ -2382,6 +2418,14 @@ body.home .home-trust {
 
 .page-cta__actions .btn {
   width: 100%;
+}
+
+.page-cta__card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.page-cta__actions .btn--outline {
+  background: var(--white);
 }
 
 .page-shell--legal {
@@ -3231,6 +3275,14 @@ body.is-legal-page::after {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .lightbox__nav--prev {
+    left: clamp(var(--sp-3), 3vw, var(--sp-7));
+  }
+
+  .lightbox__nav--next {
+    right: clamp(var(--sp-3), 3vw, var(--sp-7));
+  }
+
   /* Schedule: 2 columns */
   .schedule__inner {
     grid-template-columns: repeat(2, 1fr);
@@ -3282,6 +3334,10 @@ body.is-legal-page::after {
 }
 
 @media (max-width: 767px) {
+  .lightbox__nav {
+    display: none;
+  }
+
   :root {
     --page-hero-height: 42vh;
   }
