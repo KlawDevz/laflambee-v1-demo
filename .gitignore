@@ -25,3 +25,4 @@ Thumbs.db
 
 # Agent local assets
 .agents/
+.vercel

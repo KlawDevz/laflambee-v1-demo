@@ -56,9 +56,13 @@ export function Header() {
           </Link>
         ))}
         <a href={`tel:${site.phoneHref}`} className="mobile-nav__phone phone-fancy">
-          {site.phoneDisplay}
+          Réserver · {site.phoneDisplay}
         </a>
       </nav>
+
+      <a href={`tel:${site.phoneHref}`} className="mobile-sticky-cta" aria-label={`Réserver par téléphone au ${site.phoneDisplay}`}>
+        Réserver
+      </a>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Picture } from "@/components/Picture";
 import { ambianceImages, homeData, menuTeasers, signatureDishes } from "@/data/home";
+import { site } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,9 @@ export default function HomePage() {
             <h1 className="hero__image-title">{homeData.hero.title}</h1>
             <p className="hero__image-subtitle text-fancy">{homeData.hero.subtitle}</p>
             <div className="hero__cta-group">
+              <a href={`tel:${site.phoneHref}`} className="btn btn--primary hero__cta-call">
+                Réserver maintenant
+              </a>
               <Link href="/la-carte" className="btn btn--outline-light">
                 Voir la carte
               </Link>
@@ -77,6 +81,33 @@ export default function HomePage() {
                 <p className="feature__text text-fancy">{feature.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-trust" data-reveal>
+        <div className="container">
+          <div className="home-trust__card">
+            <p className="home-trust__kicker text-fancy">Pourquoi réserver ici ?</p>
+            <div className="home-trust__grid" data-reveal-stagger>
+              <div className="home-trust__item">
+                <strong>4,7/5</strong>
+                <span>Avis clients Google</span>
+              </div>
+              <div className="home-trust__item">
+                <strong>Produits locaux</strong>
+                <span>Sélection de producteurs d&apos;Ariège</span>
+              </div>
+              <div className="home-trust__item">
+                <strong>Service rapide</strong>
+                <span>Midi et soir, réservation conseillée</span>
+              </div>
+            </div>
+            <div className="home-trust__cta">
+              <a href={`tel:${site.phoneHref}`} className="btn btn--primary btn--lg">
+                Appeler pour réserver
+              </a>
+            </div>
           </div>
         </div>
       </section>
