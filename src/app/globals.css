@@ -291,12 +291,12 @@ body {
   top: 0;
   z-index: 100;
   padding-block: var(--sp-1);
+  min-height: 72px;
   background: var(--white);
   border-bottom: 1px solid var(--rule-light);
   box-shadow: var(--shadow-sm);
   transition: background var(--dur-base) var(--ease-out),
               box-shadow var(--dur-base) var(--ease-out),
-              padding var(--dur-base) var(--ease-out),
               border-color var(--dur-base) var(--ease-out);
 }
 
@@ -304,7 +304,6 @@ body {
   background: var(--white);
   border-bottom: 1px solid var(--rule-light);
   box-shadow: var(--shadow-sm);
-  padding-block: var(--sp-1);
 }
 
 .header__inner {
@@ -1406,6 +1405,7 @@ h3 {
   text-decoration: none;
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--r-pill);
+  border: 1px solid transparent;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -1415,7 +1415,7 @@ h3 {
   transition: background var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
               box-shadow var(--dur-base) var(--ease-out),
-              transform var(--dur-base) var(--ease-out);
+              border-color var(--dur-base) var(--ease-out);
 }
 
 .carte-nav__link:hover {
@@ -1426,6 +1426,7 @@ h3 {
 .carte-nav__link.is-active {
   background: var(--bordeaux);
   color: var(--white);
+  border-color: color-mix(in oklch, var(--bordeaux) 70%, black);
   box-shadow: var(--accent-shadow);
 }
 

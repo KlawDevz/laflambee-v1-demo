@@ -107,6 +107,7 @@ export function SiteScript() {
 
       let ticking = false;
       let heroHeight = hero?.offsetHeight || 1;
+      let wasScrolled = false;
 
       const syncMetrics = () => {
         document.documentElement.style.setProperty("--header-h", `${header.offsetHeight}px`);
@@ -115,8 +116,19 @@ export function SiteScript() {
 
       const onScroll = () => {
         const scrollY = window.scrollY;
-        const isScrolled = scrollY > 40 || !hero;
-        header.classList.toggle("is-scrolled", isScrolled);
+        const shouldEnableScrolled = scrollY > 56 || !hero;
+        const shouldDisableScrolled = scrollY < 28 && !!hero;
+
+        if (!wasScrolled && shouldEnableScrolled) {
+          header.classList.add("is-scrolled");
+          syncMetrics();
+          wasScrolled = true;
+        } else if (wasScrolled && shouldDisableScrolled) {
+          header.classList.remove("is-scrolled");
+          syncMetrics();
+          wasScrolled = false;
+        }
+
         if (hero) {
           const progress = Math.min(scrollY / (heroHeight * 0.65), 1);
           document.documentElement.style.setProperty("--hero-scroll-progress", progress.toFixed(3));
@@ -209,17 +221,20 @@ export function SiteScript() {
         links.forEach((link) => link.classList.remove("is-active"));
         next.classList.add("is-active");
         active = next;
-        next.scrollIntoView({
-          inline: "center",
-          block: "nearest",
-          behavior: smoothNav && !prefersReducedMotion() ? "smooth" : "auto",
-        });
+
+        if (smoothNav) {
+          next.scrollIntoView({
+            inline: "center",
+            block: "nearest",
+            behavior: !prefersReducedMotion() ? "smooth" : "auto",
+          });
+        }
       };
 
       const update = () => {
         if (Date.now() < manualLockUntil) return;
         const scrollPos = window.pageYOffset;
-        const probe = scrollPos + getOffset();
+        const probe = scrollPos + getOffset() + 14;
         const atBottom = window.innerHeight + scrollPos >= document.body.scrollHeight - 2;
         if (atBottom) {
           setActive(sections[sections.length - 1].link, false);
