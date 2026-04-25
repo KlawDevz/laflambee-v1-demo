@@ -1405,7 +1405,6 @@ h3 {
   text-decoration: none;
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--r-pill);
-  border: 1px solid transparent;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -1414,8 +1413,7 @@ h3 {
   scroll-snap-align: start;
   transition: background var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
-              box-shadow var(--dur-base) var(--ease-out),
-              border-color var(--dur-base) var(--ease-out);
+              box-shadow var(--dur-base) var(--ease-out);
 }
 
 .carte-nav__link:hover {
@@ -1426,7 +1424,6 @@ h3 {
 .carte-nav__link.is-active {
   background: var(--bordeaux);
   color: var(--white);
-  border-color: color-mix(in oklch, var(--bordeaux) 70%, black);
   box-shadow: var(--accent-shadow);
 }
 
