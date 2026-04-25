@@ -2243,10 +2243,10 @@ body.page-equipe .producer-card {
   gap: var(--sp-4);
   align-items: center;
   background: linear-gradient(135deg, oklch(0.96 0.02 86) 0%, oklch(0.99 0.01 90) 100%);
-  border: 1px solid var(--border-subtle);
+  border: 0;
   border-radius: var(--r-lg);
   padding: clamp(var(--sp-4), 3.2vw, var(--sp-7));
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .home-conversion__title {
