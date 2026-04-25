@@ -225,6 +225,10 @@ body.page-contact {
   padding-bottom: calc(var(--sp-16) + env(safe-area-inset-bottom));
 }
 
+body {
+  text-wrap: pretty;
+}
+
 .site-main,
 .site-header,
 .site-footer {
@@ -2190,6 +2194,48 @@ body.page-equipe .producer-card {
   padding-block: var(--space-section-lg);
 }
 
+.home-conversion {
+  padding-block: var(--sp-8) var(--sp-6);
+}
+
+.home-conversion__card {
+  display: grid;
+  gap: var(--sp-4);
+  align-items: center;
+  background: linear-gradient(135deg, oklch(0.96 0.02 86) 0%, oklch(0.99 0.01 90) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  padding: clamp(var(--sp-4), 3.2vw, var(--sp-7));
+  box-shadow: var(--shadow-sm);
+}
+
+.home-conversion__title {
+  margin: 0;
+  font-family: var(--ff-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.6rem);
+  color: var(--bordeaux);
+}
+
+.home-conversion__meta {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.home-conversion__infos {
+  display: grid;
+  gap: var(--sp-1);
+}
+
+.home-conversion__actions {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.home-conversion__btn {
+  width: 100%;
+}
+
 .home-trust {
   padding-block: var(--sp-12);
 }
@@ -2489,6 +2535,31 @@ body.home .menu-teaser__card {
 .contact-card__cta {
   text-align: center;
   margin-top: var(--sp-5);
+}
+
+.contact-card__quick-actions {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface);
+}
+
+.contact-card__quick-action {
+  min-height: 44px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--bordeaux);
+  color: var(--bordeaux);
+  font-family: var(--ff-script);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--sp-4);
+}
+
+.contact-card__quick-action--primary {
+  background: var(--bordeaux);
+  color: var(--white);
 }
 
 .contact-card__btn {
@@ -3038,6 +3109,10 @@ body.is-legal-page::after {
     align-items: stretch;
   }
 
+  .contact-card__quick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* Equipe page: photo + text side by side */
   .equipe__grid {
     grid-template-columns: 1fr 1fr;
@@ -3063,6 +3138,15 @@ body.is-legal-page::after {
   .intro__split {
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
+  }
+
+  .home-conversion__card {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--sp-6);
+  }
+
+  .home-conversion__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* Schedule: 2 columns */

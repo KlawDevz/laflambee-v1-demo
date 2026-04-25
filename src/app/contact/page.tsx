@@ -90,6 +90,14 @@ export default function ContactPage() {
             </div>
 
             <div className="contact-card contact-card--map">
+              <div className="contact-card__quick-actions" aria-label="Actions rapides">
+                <a href={`tel:${site.phoneHref}`} className="contact-card__quick-action contact-card__quick-action--primary">
+                  Réserver maintenant
+                </a>
+                <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className="contact-card__quick-action">
+                  Ouvrir l&apos;itinéraire
+                </a>
+              </div>
               <div className="contact__map">
                 <iframe
                   src={site.mapsEmbed}
