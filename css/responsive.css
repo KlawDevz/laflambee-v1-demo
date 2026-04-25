@@ -1,0 +1,516 @@
+/* ═══════════════════════════════════════════════════════════════
+   responsive.css — La Flambee
+   Mobile-first overrides only. Base styles live in main.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────
+   640px — Small tablets
+   ─────────────────────────────────────────────── */
+@media (min-width: 640px) {
+
+  /* Features: 1 col -> 2 col */
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Dishes grid: 1 col -> 2 col */
+  .dishes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery grid: 1 col -> 2 col */
+  .galerie__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-teaser__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer grid: 1 col -> 2 col */
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8, 2rem);
+  }
+}
+
+/* ───────────────────────────────────────────────
+   768px — Tablets
+   ─────────────────────────────────────────────── */
+@media (min-width: 768px) {
+
+  .carte-nav__inner {
+    gap: var(--sp-2, 0.5rem);
+    padding-inline: var(--sp-4, 1rem);
+  }
+
+  .carte-nav__link {
+    font-size: clamp(0.86rem, 0.78rem + 0.25vw, 0.98rem);
+    letter-spacing: 0.05em;
+    padding: var(--sp-2, 0.5rem) var(--sp-4, 1rem);
+  }
+
+  /* Navigation: show desktop nav, hide hamburger */
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-6, 1.5rem);
+  }
+
+  /* Contact page: card + map side by side */
+  .contact__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8, 2rem);
+    align-items: stretch;
+  }
+
+  /* Equipe page: photo + text side by side */
+  .equipe__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--sp-8, 2rem);
+  }
+
+  .equipe-split__grid,
+  .equipe-salle__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .equipe-salle__grid .equipe-salle__content {
+    order: -1;
+  }
+
+  .producers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .intro__split {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+
+  /* Schedule: 2 columns */
+  .schedule__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8, 2rem);
+    align-items: start;
+  }
+
+  /* Ambiance: 1 tall + 2 stacked grid */
+  .ambiance__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--sp-4, 1rem);
+  }
+
+  .ambiance__item--tall {
+    grid-row: 1 / -1;
+  }
+
+  .wine__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* Carte hero: text size bumps */
+  .carte-hero h1 {
+    font-size: var(--text-4xl, 2.25rem);
+  }
+
+  .carte-hero__lead {
+    font-size: var(--text-lg, 1.125rem);
+  }
+
+  .carte-section {
+    padding-block: var(--sp-16, 4rem);
+  }
+
+  /* Carte nav: sticky below header */
+  .carte-nav {
+    position: sticky;
+    top: var(--header-h, 82px);
+    z-index: 90;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero,
+  .carte-hero,
+  .equipe-hero,
+  .contact-hero {
+    min-height: 52vh;
+  }
+
+  .site-main {
+    overflow-x: clip;
+  }
+
+  .container {
+    padding-inline: var(--sp-4, 1rem);
+  }
+
+  .menu-toggle {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .hero__content,
+  .carte-hero__content,
+  .equipe-hero__content,
+  .contact-hero__content {
+    padding-inline: var(--sp-4, 1rem);
+  }
+
+  .hero__inner,
+  .carte-hero__inner {
+    gap: var(--sp-4, 1rem);
+  }
+
+  .carte-nav__inner {
+    gap: var(--space-tight, var(--sp-2));
+    padding-inline: var(--sp-3, 0.75rem);
+  }
+
+  .carte-nav__link {
+    font-size: clamp(0.82rem, 0.76rem + 0.35vw, 0.95rem);
+    letter-spacing: 0.04em;
+    padding: var(--sp-2, 0.5rem) var(--sp-3, 0.75rem);
+  }
+
+  .hours-table {
+    table-layout: fixed;
+  }
+
+  .hours-table th,
+  .hours-table td {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .hours-table th {
+    width: 42%;
+    padding-right: var(--sp-3, 0.75rem);
+  }
+
+  .contact-card__row {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2, 0.5rem);
+  }
+
+  .contact-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact__map iframe {
+    min-height: 320px;
+  }
+
+  .site-footer {
+    padding-bottom: var(--sp-12, 3rem);
+  }
+
+  .equipe-hero__content {
+    transform: none;
+  }
+
+  /* Home: preserve style, improve mobile rhythm */
+  body.home .intro {
+    padding-block: var(--space-section-md, var(--sp-16));
+  }
+
+  body.home .section-header {
+    margin-bottom: var(--sp-5);
+  }
+
+  body.home .features {
+    gap: var(--sp-5);
+    margin-top: var(--sp-8);
+  }
+
+  body.home .feature {
+    padding: var(--sp-5);
+  }
+
+  body.home .dishes__grid,
+  body.home .menu-teaser__grid {
+    gap: var(--sp-5);
+  }
+
+  body.home .ambiance__grid {
+    gap: var(--sp-3);
+  }
+
+  /* Carte: reduce cognitive density on small screens */
+  body.page-carte .carte-nav__inner {
+    padding-inline: var(--sp-2);
+  }
+
+  body.page-carte .carte-nav__link {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
+    padding-inline: var(--sp-2);
+  }
+
+  body.page-carte .carte-section .section-header {
+    margin-bottom: var(--sp-5);
+  }
+
+  body.page-carte .carte-list {
+    gap: var(--sp-4);
+  }
+
+  body.page-carte .menu-item__row {
+    gap: var(--sp-2);
+  }
+
+  body.page-carte .menu-item__name,
+  body.page-carte .menu-item__price {
+    font-size: var(--text-base);
+  }
+
+  body.page-carte .carte-formules {
+    padding: var(--sp-5);
+  }
+
+  /* Equipe: cleaner breathing space on mobile */
+  body.page-equipe .equipe-split,
+  body.page-equipe .equipe-salle,
+  body.page-equipe .equipe-producers,
+  body.page-template-page-equipe-php .equipe-split,
+  body.page-template-page-equipe-php .equipe-salle,
+  body.page-template-page-equipe-php .equipe-producers,
+  body.page-template-page-equipe .equipe-split,
+  body.page-template-page-equipe .equipe-salle,
+  body.page-template-page-equipe .equipe-producers {
+    padding-block: var(--space-section-sm, var(--sp-14));
+  }
+
+  body.page-equipe .equipe-split__grid,
+  body.page-equipe .equipe-salle__grid,
+  body.page-template-page-equipe-php .equipe-split__grid,
+  body.page-template-page-equipe-php .equipe-salle__grid,
+  body.page-template-page-equipe .equipe-split__grid,
+  body.page-template-page-equipe .equipe-salle__grid {
+    gap: var(--sp-6);
+  }
+
+  body.page-equipe .producers__grid,
+  body.page-template-page-equipe-php .producers__grid,
+  body.page-template-page-equipe .producers__grid {
+    gap: var(--sp-4);
+  }
+
+  body.page-equipe .producer-card,
+  body.page-template-page-equipe-php .producer-card,
+  body.page-template-page-equipe .producer-card {
+    padding: var(--sp-6);
+  }
+
+  body.page-equipe .equipe__storyline,
+  body.page-template-page-equipe-php .equipe__storyline,
+  body.page-template-page-equipe .equipe__storyline {
+    max-width: 100%;
+  }
+
+  /* Contact: maintain warmth, reduce cramped rows */
+  body.page-contact .contact,
+  body.page-template-page-contact-php .contact,
+  body.page-template-page-contact .contact {
+    padding-block: var(--space-section-md, var(--sp-16));
+  }
+
+  body.page-contact .contact__grid,
+  body.page-template-page-contact-php .contact__grid,
+  body.page-template-page-contact .contact__grid {
+    gap: var(--sp-6);
+  }
+
+  body.page-contact .contact-card,
+  body.page-template-page-contact-php .contact-card,
+  body.page-template-page-contact .contact-card {
+    padding: var(--sp-6);
+  }
+
+  body.page-contact .contact-card--map,
+  body.page-template-page-contact-php .contact-card--map,
+  body.page-template-page-contact .contact-card--map {
+    padding: 0;
+  }
+
+  body.page-contact .contact-card__row,
+  body.page-template-page-contact-php .contact-card__row,
+  body.page-template-page-contact .contact-card__row {
+    gap: var(--sp-3);
+  }
+
+  body.page-contact .contact-card__icon,
+  body.page-template-page-contact-php .contact-card__icon,
+  body.page-template-page-contact .contact-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   1024px — Desktop
+   ─────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+
+  /* Features: 2 col -> 3 col */
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Dishes grid: 2 col -> 3 col */
+  .dishes__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Gallery grid: 2 col -> 3 col */
+  .galerie__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-teaser__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-teaser__card:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  /* Footer grid: 2 col -> 4 col */
+  .footer__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-8, 2rem);
+  }
+
+  /* Carte featured grid: 4 columns */
+  .carte-grid--featured {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  body.page-carte .carte-grid--featured .carte-card:nth-child(1),
+  body.page-carte .carte-grid--featured .carte-card:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  body.page-carte .carte-grid--featured .carte-card:nth-child(2),
+  body.page-carte .carte-grid--featured .carte-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  /* Equipe: wider gap, asymmetric columns */
+  .equipe__grid {
+    grid-template-columns: 5fr 6fr;
+    gap: var(--sp-12, 3rem);
+  }
+
+  .producers__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Larger section paddings */
+  .intro,
+  .dishes,
+  .social-proof,
+  .ambiance,
+  .schedule,
+  .cta-band,
+  .equipe,
+  .galerie,
+  .contact,
+  .carte-section,
+  .carte-cta-final {
+    padding-block: var(--sp-20, 5rem);
+  }
+
+  /* Header inner padding */
+  .header__inner {
+    padding-inline: var(--sp-8, 2rem);
+  }
+
+  /* Carte nav sticky (reinforce for desktop header height) */
+  .carte-nav {
+    top: var(--header-h, 82px);
+  }
+
+  /* Ambiance grid: wider gap */
+  .ambiance__grid {
+    gap: var(--sp-8, 2rem);
+  }
+
+  /* Schedule: wider gap */
+  .schedule__inner {
+    gap: var(--sp-12, 3rem);
+  }
+
+  /* Contact: wider gap */
+  .contact__grid {
+    gap: var(--sp-12, 3rem);
+  }
+}
+
+@media (max-width: 900px) {
+  body.page-carte .carte-nav__inner {
+    gap: var(--sp-1);
+    padding-inline: var(--sp-3);
+  }
+
+  body.page-carte .carte-nav__link {
+    padding-inline: var(--sp-2);
+  }
+
+  body.page-carte .carte-list {
+    gap: var(--sp-4);
+  }
+}
+
+/* ───────────────────────────────────────────────
+   1280px — Large desktop
+   ─────────────────────────────────────────────── */
+@media (min-width: 1280px) {
+
+  /* Container max-width */
+  .container {
+    max-width: 1200px;
+  }
+
+  .carte-hero h1 {
+    font-size: var(--text-5xl, 3rem);
+  }
+
+  .cta-band__title {
+    font-size: var(--text-4xl, 2.25rem);
+  }
+
+  h2 {
+    font-size: var(--text-3xl, 1.875rem);
+  }
+
+  /* Gallery: 3 col -> 4 col */
+  .galerie__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Larger section paddings */
+  .intro,
+  .dishes,
+  .social-proof,
+  .ambiance,
+  .schedule,
+  .cta-band,
+  .equipe,
+  .galerie,
+  .contact,
+  .carte-section,
+  .carte-cta-final {
+    padding-block: var(--sp-24, 6rem);
+  }
+}

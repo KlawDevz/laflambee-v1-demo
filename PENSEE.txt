@@ -1,0 +1,288 @@
+🔥 Design Wordpress – La Flambée (avec mapping assets)
+Excellent, avec cette banque d'images je peux te faire une proposition beaucoup plus concrète. Je note déjà un point important : le restaurant semble être à Mirepoix (09500), pas Seix — j'ajuste en conséquence (Menu-et-carte-de-La-Flambée-à-Mirepoix + terrasse-exterieure-mirepoix). Mirepoix = village médiéval à couverts, ambiance cathare/Pays d'Olmes → ça change la DA !
+
+🎯 Révision du concept créatif
+Mirepoix = bastide médiévale, couverts en bois, halle historique, ambiance chaleureuse et traditionnelle du Sud-Ouest.
+Le concept pivote vers : "Éditorial Sud-Ouest / Bistronomie de bastide"
+
+Un site qui conjugue l'âme des vieilles pierres médiévales et la générosité de la table du Sud-Ouest. Pas sombre-cinéma, plutôt chaleureux-authentique, lumineux-terroir, avec une touche éditoriale moderne.
+
+Mots-clés directeurs
+Chaleureux · Terroir · Éditorial moderne · Lumineux & texturé · Généreux
+
+🎨 Direction artistique ajustée
+Palette (fond clair dominant, beaucoup plus adapté à ton ambiance)
+--parchemin       : #F5EFE4   (fond principal, papier ancien)
+--crème-chaude    : #EDE3D2   (fond secondaire)
+--encre-profonde  : #2B1D14   (texte, brun très foncé)
+--terre-cuite     : #B8553A   (accent, tuiles de Mirepoix)
+--bordeaux-profond: #7A2E2A   (CTA, vin)
+--or-patiné       : #B8924A   (filets, séparateurs)
+--vert-olivier    : #6B7A3E   (accent secondaire, nature)
+Justification : tes photos (salles à poutres, verrière, terrasse) sont lumineuses et chaleureuses. Un site sombre contredirait l'ambiance réelle. On va plutôt sur un "magazine papier Sud-Ouest" très premium.
+Typographie
+
+Display : Fraunces (variable, italique chic) → titres éditoriaux
+Texte : Inter ou Söhne → courant
+Accent manuscrit : Reenie Beanie / Caveat → mentions "spécialité maison", "signature du chef"
+
+Texture
+
+Léger grain papier en overlay (5-8% opacité)
+Filets fins dorés comme séparateurs (rappel des menus de bistrot chic)
+Dropcaps serif en début de paragraphes éditoriaux
+
+
+🗂️ Mapping précis : tes assets → sections
+🏠 PAGE D'ACCUEIL
+Section 1 – Hero (100vh)
+
+Image principale : salle-interieure-poutres.jpg OU salle-restaurant-verriere.jpg (à tester, je pencherai pour la verrière = lumineuse, accueillante)
+Alternative cinétique : diaporama fondu lent entre salle-restaurant-verriere.jpg → terrasse-exterieure-mirepoix.jpg → salle-interieure-poutres.jpg (cycle 6s)
+Overlay léger crème-chaud gradient bas
+Logo logo-la-flambee.jpg en haut (comparer les 3 versions, choisir celui avec meilleur détourage — ou te demander un SVG propre)
+Titre serif XXL : "La Flambée"
+Baseline : "Table du Sud-Ouest au cœur de Mirepoix"
+Micro-ligne : Depuis [année] · Bastide de Mirepoix · Ariège
+2 CTA : "Réserver une table" (plein bordeaux) + "Découvrir la carte" (outline)
+
+Section 2 – Intro manifeste
+
+Layout asymétrique, texte à gauche, image verticale à droite
+Image : cuisine_cuisiniers_preparation.jpg (humain, authentique, montre le savoir-faire)
+Texte : "Une cuisine qui prend son temps. Des produits qu'on connaît par leur prénom. Une salle qu'on tient comme une maison." (à retravailler avec le client)
+Dropcap serif sur le premier paragraphe
+
+Section 3 – Les signatures (3 plats emblématiques)
+
+Grille 3 colonnes desktop / slider mobile
+Chaque carte : photo carrée + nom serif + description 1 ligne
+Images :
+entree_salade_foie_gras_magret.jpg → "Salade gourmande au foie gras & magret"
+plat_entrecote_frites_sauce.jpg → "Entrecôte grillée, frites maison"
+dessert_mousse_au_chocolat_maison.jpg → "Mousse au chocolat maison"
+
+
+Hover : zoom subtil 1.05x + apparition d'un liseré doré
+
+Section 4 – Galerie bento immersive "L'ambiance"
+
+Mosaïque asymétrique 6 images (grands + petits formats)
+Images :
+Grand format gauche : terrasse-exterieure-mirepoix.jpg (vue signature du village !)
+Moyen : bar-restaurant.jpg
+Petit : verre_bordeaux_sur_table.jpg
+Moyen : table_plats_viande_et_pates.jpg
+Petit : vin_blanc_glace_degustation.jpg
+Grand format droite : salle-interieure-poutres.jpg
+
+
+Effet parallaxe très léger au scroll
+Pas de texte par-dessus → les images parlent
+
+Section 5 – "De l'entrée au dessert" (teaser carte)
+
+Split 3 blocs horizontaux cliquables vers la carte
+Entrées : entrees_table_salade_au_fromage.jpg
+Plats : plat_pave_saumon_riz_legumes.jpg OU viande_rouge_en_sauce_mijotee.jpg
+Desserts : desserts_patisseries_fruits.jpg OU creme_brulee_zoom.jpg
+Hover : l'image s'agrandit et le titre se souligne en doré
+CTA global : "Voir la carte complète →"
+
+Section 6 – Les vins & l'art de la table
+
+Bloc éditorial horizontal
+Image : carte-des-vins.jpg à gauche + texte à droite
+Texte court sur la sélection : vins du Sud-Ouest, Languedoc, conseils sommelier
+Petit pictogramme verre de vin en SVG
+
+Section 7 – Localisation & réassurance
+
+Split : à gauche carte Mapbox stylisée (tons parchemin/terre-cuite), à droite :
+Note Google en gros (ex: ⭐ 4.6/5 sur 300+ avis)
+2 citations courtes d'avis (extraits)
+Horaires du jour en live (ouvert/fermé)
+Bouton "Itinéraire"
+
+
+
+Footer
+
+3 colonnes : Contact / Horaires / Réseaux + newsletter
+Logo en grand, ton sobre
+
+
+📜 PAGE LA CARTE
+Hero court (40vh)
+
+Image : table_plats_viande_et_pates.jpg en bandeau, overlay crème
+Titre : "La Carte"
+Sous-titre : "Saison Automne-Hiver 2025" ou équivalent
+
+Navigation sticky horizontale (filets dorés)
+Entrées · Plats · Spécialités maison · Desserts · Vins · Menus
+Section ENTRÉES
+
+Intro éditoriale 1 phrase
+Image hero catégorie : entree_salade_foie_gras_magret.jpg (format panoramique)
+Liste 2 colonnes : nom serif — description — prix (séparateur pointillé)
+Plat "signature" mis en avant avec photo : Salade_aux_gesiers.jpg
+
+Section PLATS
+
+Image hero : plat_entrecote_frites_sauce.jpg
+Mise en avant spéciales avec photos :
+plat_gambas_grillees_riz.jpg
+Pave_de_saumon_legumes_riz.jpg
+viande_rouge_en_sauce_mijotee.jpg
+
+
+Liste des autres plats en colonnes
+
+Section SPÉCIALITÉS MAISON
+
+Mise en avant forte : galette_complete_oeuf_miroir.jpg
+Storytelling sur les recettes maison
+
+Section DESSERTS
+
+Image hero : desserts_patisseries_fruits.jpg
+Plats photo : creme_brulee_zoom.jpg, dessert_tarte_fine_aux_pommes.jpg, dessert_profiteroles_chocolat_chaud.jpg, desserts_fondant_chocolat_glace.jpg, crepe_sucree_flambee.jpg (celui-là = signature "Flambée" !!!), cafe_gourmand_mignardises.jpg
+⚡ Idée forte : mettre en avant la crepe_sucree_flambee.jpg comme signature de la maison (play sur le nom du restaurant)
+
+Section VINS
+
+Image : carte-des-vins.jpg + vin_blanc_glace_degustation.jpg
+Présentation courte de la sélection
+
+Scan du menu officiel
+
+Bloc en bas : "Télécharger la carte PDF" (à partir de Menu-et-carte-de-La-Flambée-à-Mirepoix-034.jpg)
+
+CTA fin
+
+Bandeau large : "Réservez votre table" + bouton
+
+
+👥 PAGE L'ÉQUIPE
+Ton seul asset équipe est cuisine_cuisiniers_preparation.jpg. Il va falloir soit :
+
+Option A (idéal) : prévoir un shooting portraits (1 demi-journée, objectif 50mm, lumière naturelle)
+Option B (sans shooting) : construire la page avec photos d'action et storytelling écrit fort
+
+Structure Option B (sans portraits)
+Hero
+
+Image pleine largeur : cuisine_cuisiniers_preparation.jpg
+Titre : "Ceux qui font La Flambée"
+Sous-titre : "Une cuisine se raconte d'abord par les mains qui la font."
+
+Bloc 1 – L'histoire
+
+Texte éditorial long, format colonne étroite centrée (lecture type article)
+Dropcap, italiques Fraunces pour les citations
+Image insérée au milieu : salle-interieure-poutres.jpg
+
+Bloc 2 – En cuisine
+
+Split photo/texte : cuisine_mousses_desserts_montage.jpg
+Texte sur la philosophie : fait-maison, produits locaux, saisonnalité
+
+Bloc 3 – Nos producteurs (ancrage terroir)
+
+3-4 fiches de producteurs locaux (boucher de Mirepoix, maraîcher, vigneron ariégeois, fromager)
+Format carte épurée avec nom, ville, produit fourni
+Pas besoin de photos pro, icônes SVG simples suffisent
+
+Bloc 4 – En salle
+
+Image : bar-restaurant.jpg
+Quelques lignes sur l'équipe en salle
+
+CTA
+
+"Venez nous rencontrer" → vers contact
+
+
+✉️ PAGE CONTACT
+Hero court
+
+Image : terrasse-exterieure-mirepoix.jpg (LA photo signature, vue sur la bastide)
+Titre : "Réserver · Nous trouver"
+
+Layout split 60/40
+Gauche (60%) – Formulaire
+Nom *
+Téléphone *
+Email
+Date souhaitée * (datepicker)
+Heure * (select)
+Nombre de convives * (stepper 1-12)
+Message / Allergies / Occasion
+[ Envoyer ma demande ]
+
+Style : inputs sans bordure, juste underline terre-cuite
+Label flottant
+Note : "Nous confirmons votre réservation par téléphone sous 24h"
+Alternative mise en avant dans un encart : "Envie d'appeler directement ?" + numéro cliquable en gros
+
+Droite (40%) – Infos + carte
+
+Carte Mapbox custom (style parchemin)
+Bloc infos :
+📍 Adresse complète
+🕐 Horaires (tableau, jours fermés grisés + barré)
+📞 Téléphone
+✉️ Email
+🔗 Facebook / Instagram / TripAdvisor
+
+
+Photo ambiance bas : bar-restaurant.jpg ou salle-restaurant-verriere.jpg
+
+Footer réduit
+
+⚡ Effets & micro-interactions "signature"
+
+Curseur custom sur desktop : petit point terre-cuite qui s'élargit sur les liens
+Scroll reveal lent (GSAP + Lenis) : les textes éditoriaux montent avec fade
+Dropcaps animées : la capitale se dessine au scroll
+Grain papier en overlay permanent (très léger)
+Hover images : léger zoom + liseré doré qui se trace
+Filets dorés animés entre sections (se tracent de gauche à droite au scroll)
+Transitions de page : fondu crème (overlay parchemin qui couvre/découvre)
+Hero diaporama : fondu lent entre 3 photos d'ambiance
+Bouton "Réserver" flottant mobile (sticky bottom)
+
+
+🧱 Stack technique recommandée
+
+Thème custom : base Sage 10 (Roots) ou starter Vite + Tailwind
+ACF Pro : répéteurs pour carte, producteurs, galerie
+GSAP + ScrollTrigger + Lenis : animations et smooth scroll
+Swiper.js : slider signatures + hero
+Mapbox GL JS : carte custom (style parchemin)
+Images : conversion WebP systématique, <picture> avec srcset, lazy loading natif
+Fonts : font-display: swap, preload Fraunces variable
+Perf : critical CSS inline, Lighthouse cible > 90
+
+Arborescence suggérée
+theme-laflambee/
+├── resources/
+│   ├── views/
+│   │   ├── layouts/app.blade.php
+│   │   ├── front-page.blade.php
+│   │   ├── page-carte.blade.php
+│   │   ├── page-equipe.blade.php
+│   │   └── page-contact.blade.php
+│   ├── styles/
+│   │   ├── app.css (Tailwind)
+│   │   └── fonts.css
+│   └── scripts/
+│       ├── app.js
+│       ├── modules/lenis.js
+│       ├── modules/reveal.js
+│       └── modules/cursor.js
+├── app/
+│   ├── setup.php
+│   └── fields.php (ACF)
+└── public/

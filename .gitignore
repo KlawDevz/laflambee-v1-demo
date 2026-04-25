@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Backups and archives
+*.tar
+*.tar.gz
+*.zip
+
+# wp-env local state
+.wp-env.override.json
+
+# Agent local assets
+.agents/

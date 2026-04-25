@@ -1,0 +1,177 @@
+/* ==========================================================================
+   animations.css — La Flambee scroll-reveal & motion
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   1. Scroll Reveal (base)
+   ------------------------------------------------------------------ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------
+   2. Staggered Reveal
+   ------------------------------------------------------------------ */
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-reveal-stagger].is-revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-stagger].is-revealed > *:nth-child(1)  { transition-delay: 0s; }
+[data-reveal-stagger].is-revealed > *:nth-child(2)  { transition-delay: 0.1s; }
+[data-reveal-stagger].is-revealed > *:nth-child(3)  { transition-delay: 0.2s; }
+[data-reveal-stagger].is-revealed > *:nth-child(4)  { transition-delay: 0.3s; }
+[data-reveal-stagger].is-revealed > *:nth-child(5)  { transition-delay: 0.4s; }
+[data-reveal-stagger].is-revealed > *:nth-child(6)  { transition-delay: 0.5s; }
+[data-reveal-stagger].is-revealed > *:nth-child(7)  { transition-delay: 0.6s; }
+[data-reveal-stagger].is-revealed > *:nth-child(8)  { transition-delay: 0.7s; }
+[data-reveal-stagger].is-revealed > *:nth-child(9)  { transition-delay: 0.8s; }
+[data-reveal-stagger].is-revealed > *:nth-child(10) { transition-delay: 0.9s; }
+[data-reveal-stagger].is-revealed > *:nth-child(11) { transition-delay: 1.0s; }
+[data-reveal-stagger].is-revealed > *:nth-child(12) { transition-delay: 1.1s; }
+
+/* ------------------------------------------------------------------
+   3. Hero — page-load entrance
+   ------------------------------------------------------------------ */
+.hero__content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero__inner > *     { animation-delay: 0.12s; }
+.hero__cta-group     { animation-delay: 0.35s; }
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg img {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------------
+   4. Hover — cards, gallery, buttons
+   ------------------------------------------------------------------ */
+.dish {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dish:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px oklch(0.2 0.02 40 / 0.12);
+  border-color: transparent;
+}
+
+.carte-card {
+  transition: transform 0.3s ease;
+}
+.carte-card:hover {
+  transform: scale(1.03);
+  border-color: transparent;
+}
+
+.galerie__item img,
+.ambiance__item img,
+.menu-teaser__card img {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.galerie__item:hover img,
+.ambiance__item:hover img,
+.menu-teaser__card:hover img,
+.wine__media:hover img,
+.equipe-hero__media:hover img,
+.equipe-salle__media:hover img {
+  transform: scale(1.08);
+}
+
+.equipe-split__media:hover img {
+  transform: scale(1.04);
+}
+
+.equipe-salle__media:hover img {
+  transform: scale(1.04);
+}
+
+.btn {
+  transition: background-color 0.25s ease,
+              color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------
+   5. Mobile navigation overlay
+   ------------------------------------------------------------------ */
+.mobile-nav {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* ------------------------------------------------------------------
+   6. Reduced motion — accessibility
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .contact-hero:hover .contact-hero__media img {
+    transform: none;
+    filter: none;
+  }
+
+  .contact-hero:hover .contact-hero__media::before {
+    opacity: 0.24;
+    transform: none;
+  }
+
+  .hero:hover .hero__bg .hero__img {
+    transform: none;
+    filter: none;
+  }
+
+  .hero:hover .hero__bg::before {
+    opacity: 0.24;
+    transform: none;
+  }
+}
