@@ -12,6 +12,7 @@ import {
   plats,
   snacking,
 } from "@/data/menu";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Carte & Menu à Mirepoix",
@@ -154,6 +155,26 @@ export default function CartePage() {
             <p className="carte-section__sub text-fancy">Idéales pour un repas complet à petit prix.</p>
           </div>
           <MenuList items={formules} />
+        </div>
+      </section>
+
+      <section className="page-cta" data-reveal>
+        <div className="container">
+          <div className="page-cta__card">
+            <div>
+              <p className="page-cta__kicker text-fancy">Une envie particulière ?</p>
+              <h2 className="page-cta__title">Réservez votre table en 1 appel</h2>
+              <p className="page-cta__meta">{site.footerHours}</p>
+            </div>
+            <div className="page-cta__actions">
+              <a href={`tel:${site.phoneHref}`} className="btn btn--primary btn--lg">
+                Appeler {site.phoneDisplay}
+              </a>
+              <Link href="/contact" className="btn btn--outline">
+                Infos & accès
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

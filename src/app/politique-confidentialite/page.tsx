@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <section className="page-shell">
+    <section className="page-shell page-shell--legal">
       <div className="container">
-        <article>
+        <article className="legal-card">
           <header className="page-shell__header">
             <h1>Politique de confidentialité</h1>
           </header>
-          <div className="page-shell__content">
+          <div className="page-shell__content legal-card__content">
             <p>
               Cette politique décrit le traitement des données à caractère personnel effectué via le site {site.name}.
             </p>

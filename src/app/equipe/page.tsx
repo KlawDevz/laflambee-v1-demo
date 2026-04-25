@@ -114,6 +114,25 @@ export default function EquipePage() {
         </div>
       </section>
 
+      <section className="page-cta" data-reveal>
+        <div className="container">
+          <div className="page-cta__card">
+            <div>
+              <p className="page-cta__kicker text-fancy">Envie de découvrir l&apos;ambiance ?</p>
+              <h2 className="page-cta__title">On vous accueille midi et soir</h2>
+              <p className="page-cta__meta">{site.footerHours}</p>
+            </div>
+            <div className="page-cta__actions">
+              <a href={`tel:${site.phoneHref}`} className="btn btn--primary btn--lg">
+                Réserver maintenant
+              </a>
+              <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+                Itinéraire
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
 import { Picture } from "@/components/Picture";
 import { equipeGallery } from "@/data/equipe";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Galerie Photos à Mirepoix",
@@ -34,6 +35,26 @@ export default function GaleriePage() {
       <section className="galerie page-shell" data-reveal>
         <div className="container">
           <GalleryLightbox items={equipeGallery} />
+        </div>
+      </section>
+
+      <section className="page-cta" data-reveal>
+        <div className="container">
+          <div className="page-cta__card">
+            <div>
+              <p className="page-cta__kicker text-fancy">Vous aimez ce que vous voyez ?</p>
+              <h2 className="page-cta__title">Réservez votre table à La Flambée</h2>
+              <p className="page-cta__meta">{site.address}</p>
+            </div>
+            <div className="page-cta__actions">
+              <a href={`tel:${site.phoneHref}`} className="btn btn--primary btn--lg">
+                Appeler {site.phoneDisplay}
+              </a>
+              <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+                Nous trouver
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </>

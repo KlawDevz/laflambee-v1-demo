@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <section className="page-shell">
+    <section className="page-shell page-shell--legal">
       <div className="container">
-        <article>
+        <article className="legal-card">
           <header className="page-shell__header">
             <h1>Mentions légales</h1>
           </header>
-          <div className="page-shell__content">
+          <div className="page-shell__content legal-card__content">
             <p>
               Le présent site est édité pour le restaurant {site.name}, situé au {site.address}.
             </p>
