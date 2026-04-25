@@ -17,6 +17,15 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Carte & Menu à Mirepoix",
   description: "Carte du restaurant La Flambée à Mirepoix : pizzas, viandes, entrées, desserts, menus et boissons.",
+  keywords: [
+    "carte restaurant mirepoix",
+    "menu la flambée mirepoix",
+    "pizza feu de bois mirepoix",
+    "plats restaurant mirepoix",
+  ],
+  alternates: {
+    canonical: "/la-carte",
+  },
 };
 
 type MenuItem = readonly [string, string, string, string?];

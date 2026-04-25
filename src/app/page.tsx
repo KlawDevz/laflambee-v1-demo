@@ -1,9 +1,53 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Picture } from "@/components/Picture";
 import { ambianceImages, homeData, menuTeasers, signatureDishes } from "@/data/home";
 import { site } from "@/data/site";
 
+const faqItems = [
+  {
+    q: "Faut-il réserver à La Flambée ?",
+    a: "Oui, la réservation est conseillée, surtout le week-end et les soirs de forte affluence.",
+  },
+  {
+    q: "Où se situe le restaurant ?",
+    a: "Nous sommes au cœur de Mirepoix, au 24/25 Place Maréchal Leclerc.",
+  },
+  {
+    q: "Quels sont les horaires d'ouverture ?",
+    a: "Lun-Mar & Ven-Dim : 12h-14h / 19h-22h. Fermé mercredi et jeudi.",
+  },
+] as const;
+
+export const metadata: Metadata = {
+  title: "Restaurant à Mirepoix",
+  description:
+    "La Flambée à Mirepoix : cuisine du terroir, pizzas au feu de bois, produits locaux et réservation rapide par téléphone.",
+  keywords: [
+    "restaurant mirepoix",
+    "réservation restaurant mirepoix",
+    "pizza feu de bois mirepoix",
+    "restaurant place maréchal leclerc mirepoix",
+    "la flambée mirepoix",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+};
+
 export default function HomePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
   return (
     <>
       <section className="hero">
@@ -197,6 +241,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="home-faq" data-reveal>
+        <div className="container">
+          <div className="section-header section-header--center">
+            <span className="section-label text-fancy">Infos pratiques</span>
+            <h2>Questions fréquentes</h2>
+            <p className="section-desc text-fancy">L&apos;essentiel pour réserver rapidement.</p>
+          </div>
+          <div className="home-faq__grid" data-reveal-stagger>
+            {faqItems.map((item) => (
+              <article className="home-faq__item" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </article>
+            ))}
+          </div>
+          <div className="home-faq__cta">
+            <a href={`tel:${site.phoneHref}`} className="btn btn--primary btn--lg">
+              Réserver maintenant
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="menu-teaser" data-reveal>
         <div className="container">
           <div className="section-header section-header--center">
@@ -219,6 +286,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   );
 }

@@ -6,6 +6,10 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact & Accès à Mirepoix",
   description: "Contact, horaires et accès du restaurant La Flambée à Mirepoix. Réservation par téléphone.",
+  keywords: ["contact la flambée mirepoix", "réserver restaurant mirepoix", "adresse la flambée"],
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

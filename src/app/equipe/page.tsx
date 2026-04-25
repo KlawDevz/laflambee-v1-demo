@@ -6,6 +6,10 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "L'Équipe",
   description: "L'histoire de La Flambée à Mirepoix, son équipe et ses producteurs locaux du terroir.",
+  keywords: ["équipe la flambée", "histoire restaurant mirepoix", "producteurs locaux ariège"],
+  alternates: {
+    canonical: "/equipe",
+  },
 };
 
 export default function EquipePage() {

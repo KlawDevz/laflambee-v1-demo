@@ -7,6 +7,10 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Galerie Photos à Mirepoix",
   description: "Galerie photos du restaurant La Flambée à Mirepoix : salle, terrasse, cuisine et plats maison.",
+  keywords: ["photos la flambée mirepoix", "galerie restaurant mirepoix", "ambiance la flambée"],
+  alternates: {
+    canonical: "/galerie",
+  },
 };
 
 export default function GaleriePage() {
