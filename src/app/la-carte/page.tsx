@@ -61,7 +61,7 @@ export default function CartePage() {
         </div>
         <div className="container">
           <div className="carte-hero__inner" data-reveal>
-            <h1>La carte</h1>
+            <h1 className="display-title">La carte</h1>
             <p className="carte-hero__lead text-fancy">Saison Automne-Hiver 2025</p>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function CartePage() {
       <section id="specialites" className="carte-section carte-section--highlight">
         <div className="container">
           <div className="section-header section-header--center" data-reveal>
-            <h2>Spécialités maison</h2>
+            <h2 className="display-title">Spécialités maison</h2>
             <p className="carte-section__sub text-fancy">Les plats préférés de nos clients.</p>
           </div>
 
@@ -100,7 +100,7 @@ export default function CartePage() {
       <section id="pizzas" className="carte-section carte-section--alt">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Pizzas</h2>
+            <h2 className="display-title">Pizzas</h2>
             <p className="carte-section__fire-note text-fancy">Toutes nos pizzas sont cuites au feu de bois</p>
           </div>
           <MenuList items={pizzas} />
@@ -115,7 +115,7 @@ export default function CartePage() {
       <section id="plats" className="carte-section carte-section--alt">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Viandes & Plats</h2>
+            <h2 className="display-title">Viandes & Plats</h2>
           </div>
           <MenuList items={plats} />
         </div>
@@ -124,7 +124,7 @@ export default function CartePage() {
       <section id="entrees" className="carte-section">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Entrées & Salades</h2>
+            <h2 className="display-title">Entrées & Salades</h2>
           </div>
           <MenuList items={entrees} />
         </div>
@@ -133,7 +133,7 @@ export default function CartePage() {
       <section id="snacking" className="carte-section carte-section--alt">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Snacking</h2>
+            <h2 className="display-title">Snacking</h2>
           </div>
           <MenuList items={snacking} />
         </div>
@@ -142,7 +142,7 @@ export default function CartePage() {
       <section id="desserts" className="carte-section">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Desserts & Crêpes</h2>
+            <h2 className="display-title">Desserts & Crêpes</h2>
           </div>
           <MenuList items={desserts} />
         </div>
@@ -151,7 +151,7 @@ export default function CartePage() {
       <section id="vins" className="carte-section carte-section--alt">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Vins & Boissons</h2>
+            <h2 className="display-title">Vins & Boissons</h2>
           </div>
           <MenuList items={boissons} />
         </div>
@@ -160,7 +160,7 @@ export default function CartePage() {
       <section id="menus" className="carte-section">
         <div className="container">
           <div className="section-header" data-reveal>
-            <h2>Nos menus</h2>
+            <h2 className="display-title">Nos menus</h2>
             <p className="carte-section__sub text-fancy">Idéales pour un repas complet à petit prix.</p>
           </div>
           <MenuList items={formules} />

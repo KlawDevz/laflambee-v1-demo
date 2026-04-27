@@ -60,7 +60,8 @@ export function Header() {
         </a>
       </nav>
 
-      <a href={`tel:${site.phoneHref}`} className="mobile-sticky-cta" aria-label={`Réserver par téléphone au ${site.phoneDisplay}`}>
+      <a href={`tel:${site.phoneHref}`} className="mobile-sticky-cta btn btn--primary btn--sticky" aria-label={`Réserver par téléphone au ${site.phoneDisplay}`}>
+        <span className="mobile-sticky-cta__icon">📞</span>
         Réserver
       </a>
     </>
